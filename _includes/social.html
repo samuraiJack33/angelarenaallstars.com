@@ -1,0 +1,18 @@
+{% if include.social.twitter %}
+  <a target="_blank" href="https://twitter.com/{{ include.social.twitter }}"><i class="twitter icon"></i></a>
+{% endif %}
+{% if include.social.linkedin %}
+  <a target="_blank" href="https://www.linkedin.com/in/{{ include.social.linkedin }}"><i class="linkedin icon"></i></a>
+{% endif %}
+{% if include.social.github %}
+  {% include icon-github.html username=include.social.github %}
+{% endif %}
+{% if include.social.instagram %}
+  <a target="_blank" href="https://instagram.com/{{ include.social.instagram }}"><i class="instagram icon"></i></a>
+{% endif %}
+{% if include.social.facebook %}
+  <a target="_blank" href="https://facebook.com/{{ include.social.facebook }}"><i class="facebook icon"></i></a>
+{% endif %}
+{% if include.social.angellist %}
+  <a target="_blank" href="https://angel.co/{{ include.social.angellist }}"><i class="angellist icon"></i></a>
+{% endif %}

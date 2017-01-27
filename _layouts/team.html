@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+  {% assign title="AAA Team - " | append: page.display_name %}
+  {% include head.html title=title %}
+
+  <body>
+
+    <div class="page-content {{ page.path | replace: "/", "_" }}">
+      <div class="header">
+        {% include header.html %}
+      </div>
+      <div class="page-content-holder">
+        <div class="wrapper">
+          <h1>
+            {{ page.display_name }}
+          </h1>
+          <h5 class="subtitle">
+            {{ page.title }}
+            {% include social.html social=page %}
+          </h5>
+
+          {{ content }}
+
+          <!-- clear kind of -->
+          <p></p>
+
+          <!-- empty space -->
+          <br />
+          <br />
+
+          <h3>Blog posts by {{ page.display_name }}</h3>
+          <ul>
+            {% assign posts = site.posts | where: "author", page.name %}
+            {% for post in posts %}
+              <li>
+                <a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%b %-d, %Y" }}
+                <ul>
+                  <small>{{ post.excerpt }}</small>
+                </ul>
+              </li>
+            {% endfor %}
+        </div>
+
+      </div>
+
+    </div>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>

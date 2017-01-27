@@ -1,0 +1,10 @@
+---
+title: Blog
+layout: default
+---
+
+<div class="wrapper">
+  {% for post in paginator.posts %}
+    {% include post.html post=post display=post.excerpt %}
+  {% endfor %}
+</div>
